@@ -1,5 +1,5 @@
 vb = document.getElementById("video_box")
-vrect = vb.getBoundingClientRect()
+//vrect = vb.getBoundingClientRect()
 vs = document.getElementsByTagName('video')
 v = vs[0]
 if (v.getAttribute('title') == 'Troemner_1.mp4') {
@@ -11,7 +11,7 @@ qd = document.createElement("div")
 qd.className = "modal"
 Object.assign(qd.style, {
     display: "none",
-    position: "absolute",
+    position: "inherit",
     overflow: "auto",
     backgroundColor: "rgba(200,200,200,0.5)",
     left: 0,
