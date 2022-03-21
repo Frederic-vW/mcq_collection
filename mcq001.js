@@ -15,8 +15,8 @@ Object.assign(qd.style, {
     position: "absolute",
     overflow: "auto",
     backgroundColor: "rgba(200,200,200,0.7)",
-    left: "10%",
-    top: "10%",
+    left: "25%",
+    top: "25%",
     width: "100%",
     height: "100%",
 })
