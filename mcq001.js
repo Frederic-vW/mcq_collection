@@ -1,5 +1,6 @@
 //vb = document.getElementById("video_box")
-vb = document.getElementsByClassName("book_content")[0]
+//vb = document.getElementsByClassName("book_content")[0]
+vb = document.getElementsByClassName("box py-3 generalbox book_content")[0]
 //vrect = vb.getBoundingClientRect()
 vs = document.getElementsByTagName('video')
 v = vs[0]
