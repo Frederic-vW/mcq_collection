@@ -115,7 +115,7 @@ vb.appendChild(qd)
 
 var q1_shown = false;
 function showQuestion() {
-    document.getElementById("time").innerHTML = "Time: "+v.currentTime;
+    //document.getElementById("time").innerHTML = "Time: "+v.currentTime;
     if (!q1_shown) {
         if (v.currentTime > 1.0) {
             q1_shown = true;
