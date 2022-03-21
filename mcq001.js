@@ -1,5 +1,5 @@
 //vb = document.getElementById("video_box")
-vb = document.getElementById("book_content")
+vb = document.getElementsByClassName("book_content")[0]
 //vrect = vb.getBoundingClientRect()
 vs = document.getElementsByTagName('video')
 v = vs[0]
