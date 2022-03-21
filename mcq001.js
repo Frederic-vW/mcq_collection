@@ -1,3 +1,5 @@
+vb = document.getElementById("video_box")
+vrect = vb.getBoundingClientRect()
 vs = document.getElementsByTagName('video')
 v = vs[0]
 if (v.getAttribute('title') == 'Troemner_1.mp4') {
@@ -7,11 +9,16 @@ if (v.getAttribute('title') == 'Troemner_1.mp4') {
 // main question div qd
 qd = document.createElement("div")
 qd.className = "modal"
-qd.id = "modal_mcq"
-qd.name = ""
-qd.style.cssText = `display: none; position: fixed; left: 0; top: 0;
-width: 100%; height: 100%; overflow: auto;
-background-color: rgba(200,200,200,0.5);`
+Object.assign(qd.style, {
+    display: "none",
+    position: "absolute",
+    overflow: "auto",
+    backgroundColor: "rgba(200,200,200,0.5)",
+    left: 0,
+    top: 0,
+    width: "100%",
+    height: "100%",
+})
 qd2 = document.createElement("div")
 qd2.style.cssText = `position: relative; padding: 20px; margin: auto;
 width: 100%; background-color: rgba(250,250,250,0.9);`
@@ -29,7 +36,7 @@ p2 = document.createElement("p")
 dA = document.createElement("div")
 dA.setAttribute("style", "display: inline-block;")
 iA = document.createElement("input")
-Object.assign(iA, {type: "radio", id: "A", name: "optionA", value: "A1"})
+Object.assign(iA, {type: "checkbox"})
 lA = document.createElement("label")
 lA.setAttribute("for", "A")
 lA.innerHTML = "True"
@@ -42,7 +49,7 @@ dA.appendChild(fbA)
 // answer (B)
 dB = document.createElement("div")
 iB = document.createElement("input")
-Object.assign(iB, {type: "radio", id: "B", name: "optionB", value: "B1"})
+Object.assign(iB, {type: "checkbox"})
 lB = document.createElement("label")
 lB.setAttribute("for", "B")
 lB.innerHTML = "False"
@@ -55,7 +62,7 @@ dB.appendChild(fbB)
 // answer (C)
 dC = document.createElement("div")
 iC = document.createElement("input")
-Object.assign(iC, {type: "radio", id: "C", name: "optionC", value: "C1"})
+Object.assign(iC, {type: "checkbox"})
 lC = document.createElement("label")
 lC.setAttribute("for", "C")
 lC.innerHTML = "Maybe"
@@ -68,7 +75,7 @@ dC.appendChild(fbC)
 // answer (D)
 dD = document.createElement("div")
 iD = document.createElement("input")
-Object.assign(iD, {type: "radio", id: "D", name: "optionD", value: "D1"})
+Object.assign(iD, {type: "checkbox"})
 lD = document.createElement("label")
 lD.setAttribute("for", "D")
 lD.innerHTML = "No clue..."
@@ -110,12 +117,10 @@ b2.innerHTML = "Skip"
 p3.appendChild(b2)
 qd2.appendChild(p3)
 qd.appendChild(qd2)
-vb = document.getElementById("video_box")
 vb.appendChild(qd)
 
 var q1_shown = false;
 function showQuestion() {
-    //document.getElementById("time").innerHTML = "Time: "+v.currentTime;
     if (!q1_shown) {
         if (v.currentTime > 1.0) {
             q1_shown = true;
