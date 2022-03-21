@@ -11,7 +11,7 @@ qd = document.createElement("div")
 qd.className = "modal"
 Object.assign(qd.style, {
     display: "none",
-    position: "inherit",
+    position: "absolute",
     overflow: "auto",
     backgroundColor: "rgba(200,200,200,0.5)",
     left: 0,
