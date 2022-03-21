@@ -1,4 +1,5 @@
-vb = document.getElementById("video_box")
+//vb = document.getElementById("video_box")
+vb = document.getElementById("book_content")
 //vrect = vb.getBoundingClientRect()
 vs = document.getElementsByTagName('video')
 v = vs[0]
@@ -118,6 +119,7 @@ p3.appendChild(b2)
 qd2.appendChild(p3)
 qd.appendChild(qd2)
 vb.appendChild(qd)
+//document.appendChild(qd)
 
 var q1_shown = false;
 function showQuestion() {
