@@ -1,7 +1,7 @@
 //vb = document.getElementById("video_box")
 //vb = document.getElementsByClassName("book_content")[0]
 vb = document.getElementsByClassName("box py-3 generalbox book_content")[0]
-//vrect = vb.getBoundingClientRect()
+vrect = vb.getBoundingClientRect()
 vs = document.getElementsByTagName('video')
 v = vs[0]
 if (v.getAttribute('title') == 'Troemner_1.mp4') {
@@ -11,6 +11,19 @@ if (v.getAttribute('title') == 'Troemner_1.mp4') {
 // main question div qd
 qd = document.createElement("div")
 qd.className = "modal"
+//
+Object.assign(qd.style, {
+    display: "none",
+    position: "absolute",
+    overflow: "auto",
+    backgroundColor: "rgba(200,200,200,0.7)",
+    left: vrect.left,
+    top: vrect.top,
+    width: vrect.width,
+    height: vrect.height,
+})
+//
+/*
 Object.assign(qd.style, {
     display: "none",
     position: "absolute",
@@ -21,6 +34,7 @@ Object.assign(qd.style, {
     width: "100%",
     height: "100%",
 })
+*/
 qd2 = document.createElement("div")
 qd2.style.cssText = `position: relative; padding: 20px; margin: auto;
 width: 100%; background-color: rgba(250,250,250,0.9);`
