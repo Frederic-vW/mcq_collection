@@ -21,7 +21,7 @@ $(window).on('load', function() {
     Object.assign(qd.style, {
         display: "none",
         position: "absolute",
-        overflow: "visible",
+        overflow: "hidden",
         backgroundColor: "rgba(200,200,200,0.7)",
         left: vrect.x+'px',
         top: vrect.y+'px',
