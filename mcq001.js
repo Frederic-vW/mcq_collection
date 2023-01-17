@@ -19,7 +19,7 @@ $(window).on('load', function() {
     qd.id = 'mcq_id'
     //
     Object.assign(qd.style, {
-        display: "block",
+        display: "none",
         position: "absolute",
         overflow: "visible",
         backgroundColor: "rgba(200,200,200,0.7)",
