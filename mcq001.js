@@ -1,4 +1,5 @@
 $(window).on('load', function() {
+    console.log("js script video-MCQ running ...")
     //vb = document.getElementById("video_box")
     //vb = document.getElementsByClassName("book_content")[0]
     vb = document.getElementsByClassName("box py-3 generalbox book_content")[0]
