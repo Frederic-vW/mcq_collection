@@ -143,7 +143,6 @@ $(window).on('load', function() {
     parentDiv.insertBefore(qd, vb.nextSibling)
     //vb.appendChild(qd)
     //document.appendChild(qd)
-});
 
 var q1_shown = false;
 function showQuestion() {
@@ -179,3 +178,4 @@ function get_feedback(e, c) {
         }
     }
 }
+});
