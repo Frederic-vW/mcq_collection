@@ -2,8 +2,11 @@ $(window).on('load', function() {
     console.log("js script video-MCQ running ...")
     //vb = document.getElementById("video_box")
     //vb = document.getElementsByClassName("book_content")[0]
-    vb = document.getElementsByClassName("box py-3 generalbox book_content")[0]
+    //vb = document.getElementsByClassName("box py-3 generalbox book_content")[0]
+    vb = document.getElementsByClassName('video-js')[0]
+    console.log(vb)
     vrect = vb.getBoundingClientRect()
+    console.log(vrect)
     vs = document.getElementsByTagName('video')
     v = vs[0]
     if (v.getAttribute('title') == 'Troemner_1.mp4') {
@@ -13,16 +16,17 @@ $(window).on('load', function() {
     // main question div qd
     qd = document.createElement("div")
     qd.className = "modal"
+    qd.id = 'mcq_id'
     //
     Object.assign(qd.style, {
-        display: "none",
+        display: "block",
         position: "absolute",
-        overflow: "auto",
+        overflow: "visible",
         backgroundColor: "rgba(200,200,200,0.7)",
-        left: vrect.left,
-        top: vrect.top,
-        width: vrect.width,
-        height: vrect.height,
+        left: vrect.x+'px',
+        top: vrect.y+'px',
+        width: vrect.width+'px',
+        height: vrect.height+'px',
     })
     //
     /*
@@ -135,7 +139,9 @@ $(window).on('load', function() {
     p3.appendChild(b2)
     qd2.appendChild(p3)
     qd.appendChild(qd2)
-    vb.appendChild(qd)
+    parentDiv = vb.parentNode
+    parentDiv.insertBefore(qd, vb.nextSibling)
+    //vb.appendChild(qd)
     //document.appendChild(qd)
 });
 
