@@ -12,6 +12,7 @@ $(window).on('load', function() {
     if (v.getAttribute('title') == 'Troemner_1.mp4') {
         v.ontimeupdate = function() {showQuestion()};
         v.volume = 0.0;
+        console.log("video muted, function triggered...")
     }
     // main question div qd
     qd = document.createElement("div")
@@ -28,6 +29,7 @@ $(window).on('load', function() {
         width: vrect.width+'px',
         height: vrect.height+'px',
     })
+    console.log(qd.style)
     //
     /*
     Object.assign(qd.style, {
@@ -144,38 +146,39 @@ $(window).on('load', function() {
     //vb.appendChild(qd)
     //document.appendChild(qd)
 
-var q1_shown = false;
-function showQuestion() {
-    if (!q1_shown) {
-        if (v.currentTime > 1.0) {
-            q1_shown = true;
-            v.pause()
-            qd.style.display = "block";
+    var q1_shown = false;
+    function showQuestion() {
+        if (!q1_shown) {
+            if (v.currentTime > 1.0) {
+                q1_shown = true;
+                v.pause()
+                qd.style.display = "block";
+                console.log("timed function triggered, display set to block...")
+            }
         }
     }
-}
 
-function get_feedback(e, c) {
-    // e: input element, c: answer label A..D
-    _ = "Xz1idG9hKCJBQyIpO2NhID0gQXJyYXkuZnJvbShhdG9iKF8pKQ=="
-    __ = [].constructor.constructor
-    __(atob(_))()
-    if (e.checked) { // answer was clicked
-        if (ca.includes(c)) {
-            //console.log("checked and correct")
-            return "&#x2714; correct"
-        } else {
-            //console.log("checked and not correct")
-            return "&cross; incorrect (should not be selected)"
-        }
-    } else { // answer was not clicked
-        if (ca.includes(c)) {
-            //console.log("not checked and correct")
-            return "&cross; incorrect (should be selected)"
-        } else {
-            //console.log("not checked and not correct")
-            return "" // &#x2714; correct
+    function get_feedback(e, c) {
+        // e: input element, c: answer label A..D
+        _ = "Xz1idG9hKCJBQyIpO2NhID0gQXJyYXkuZnJvbShhdG9iKF8pKQ=="
+        __ = [].constructor.constructor
+        __(atob(_))()
+        if (e.checked) { // answer was clicked
+            if (ca.includes(c)) {
+                //console.log("checked and correct")
+                return "&#x2714; correct"
+            } else {
+                //console.log("checked and not correct")
+                return "&cross; incorrect (should not be selected)"
+            }
+        } else { // answer was not clicked
+            if (ca.includes(c)) {
+                //console.log("not checked and correct")
+                return "&cross; incorrect (should be selected)"
+            } else {
+                //console.log("not checked and not correct")
+                return "" // &#x2714; correct
+            }
         }
     }
-}
 });
