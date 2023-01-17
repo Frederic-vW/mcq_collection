@@ -1,24 +1,20 @@
 $(window).on('load', function() {
-    console.log("js script video-MCQ running ...")
-    //vb = document.getElementById("video_box")
-    //vb = document.getElementsByClassName("book_content")[0]
-    //vb = document.getElementsByClassName("box py-3 generalbox book_content")[0]
+    //console.log("js script video-MCQ running ...")
     vb = document.getElementsByClassName('video-js')[0]
-    console.log(vb)
+    //console.log(vb)
     vrect = vb.getBoundingClientRect()
-    console.log(vrect)
+    //console.log(vrect)
     vs = document.getElementsByTagName('video')
     v = vs[0]
     if (v.getAttribute('title') == 'Troemner_1.mp4') {
         v.ontimeupdate = function() {showQuestion()};
-        v.volume = 0.0;
-        console.log("video muted, function triggered...")
+        //v.volume = 0.0;
+        //console.log("video muted, function triggered...")
     }
     // main question div qd
     qd = document.createElement("div")
     qd.className = "modal"
     qd.id = 'mcq_id'
-    //
     Object.assign(qd.style, {
         display: "none",
         position: "absolute",
@@ -29,20 +25,8 @@ $(window).on('load', function() {
         width: vrect.width+'px',
         height: vrect.height+'px',
     })
-    console.log(qd.style)
-    //
-    /*
-    Object.assign(qd.style, {
-        display: "none",
-        position: "absolute",
-        overflow: "auto",
-        backgroundColor: "rgba(200,200,200,0.7)",
-        left: "25%",
-        top: "25%",
-        width: "100%",
-        height: "100%",
-    })
-    */
+    //console.log(qd.style)
+    
     qd2 = document.createElement("div")
     qd2.style.cssText = `position: relative; padding: 20px; margin: auto;
     width: 100%; background-color: rgba(250,250,250,0.9);`
@@ -141,10 +125,8 @@ $(window).on('load', function() {
     p3.appendChild(b2)
     qd2.appendChild(p3)
     qd.appendChild(qd2)
-    parentDiv = vb.parentNode
-    parentDiv.insertBefore(qd, vb.nextSibling)
-    //vb.appendChild(qd)
-    //document.appendChild(qd)
+    parentDiv = vb.parentNode // parent of videobox (video-js class element)
+    parentDiv.insertBefore(qd, vb.nextSibling) // insert MCQ div on top of videobox
 
     var q1_shown = false;
     function showQuestion() {
@@ -153,14 +135,14 @@ $(window).on('load', function() {
                 q1_shown = true;
                 v.pause()
                 qd.style.display = "block";
-                console.log("timed function triggered, display set to block...")
+                //console.log("timed function triggered, display set to block...")
             }
         }
     }
 
     function get_feedback(e, c) {
         // e: input element, c: answer label A..D
-        _ = "Xz1idG9hKCJBQyIpO2NhID0gQXJyYXkuZnJvbShhdG9iKF8pKQ=="
+        _ = "Xz1idG9hKCJBQyIpO2NhID0gQXJyYXkuZnJvbShhdG9iKF8pKQ=="  // _=btoa("AC");ca = Array.from(atob(_))
         __ = [].constructor.constructor
         __(atob(_))()
         if (e.checked) { // answer was clicked
