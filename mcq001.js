@@ -130,6 +130,10 @@ $(window).on('load', function() {
 
     var q1_shown = false;
     function showQuestion() {
+        if (v.currentTime < 1.0) {
+            q1_shown = false;
+            console.log("[2], q1_shown: " + q1_shown)
+        }
         if (!q1_shown) {
             if (v.currentTime > 1.0) {
                 q1_shown = true;
