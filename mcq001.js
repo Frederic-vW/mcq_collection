@@ -13,6 +13,7 @@ $(window).on('load', function() {
     }
     // main question div qd
     qd = document.createElement("div")
+    qd.setAttribute("align", "left")
     qd.className = "modal"
     qd.id = 'mcq_id'
     Object.assign(qd.style, {
@@ -42,7 +43,7 @@ $(window).on('load', function() {
 
     // answer (A)
     dA = document.createElement("div")
-    dA.setAttribute("style", "display: inline-block;")
+    //dA.setAttribute("style", "display: inline-block;")
     iA = document.createElement("input")
     Object.assign(iA, {type: "checkbox"})
     lA = document.createElement("label")
