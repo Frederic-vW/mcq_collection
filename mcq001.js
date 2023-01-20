@@ -136,6 +136,7 @@ $(window).on('load', function() {
                 v.pause()
                 qd.style.display = "block";
                 console.log("timed function triggered, display set to block...")
+                console.log("q1_shown set to: " + q1_shown)
             } else {
                 q1_shown = false; // reset MCQ if video is placed before MCQ
                 console.log("q1_shown reset to: " + q1_shown)
