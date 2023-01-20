@@ -130,21 +130,24 @@ $(window).on('load', function() {
 
     var q1_shown = false;
     function showQuestion() {
-        if (v.currentTime < 1.0) {
-            q1_shown = false;
-            console.log("[2], q1_shown: " + q1_shown)
+        if ((!q1_shown) && (v.currentTime > 1.0)) {
+            q1_shown = true;
+            v.pause()
+            qd.style.display = "block";
+            //console.log("timed function triggered, display set to block...")
         }
-        if (!q1_shown) {
-            if (v.currentTime > 1.0) {
-                q1_shown = true;
-                v.pause()
-                qd.style.display = "block";
-                console.log("timed function triggered, display set to block...")
-                console.log("q1_shown set to: " + q1_shown)
-            } else {
-                q1_shown = false; // reset MCQ if video is placed before MCQ
-                console.log("q1_shown reset to: " + q1_shown)
-            }
+        if (q1_shown && (v.currentTime < 1.0)) {
+            q1_shown = false;
+            // reset checkboxes
+            iA.checked = false;
+            iB.checked = false;
+            iC.checked = false;
+            iD.checked = false;
+            // reset feedback
+            fbA.innerHTML = "";
+            fbB.innerHTML = "";
+            fbC.innerHTML = "";
+            fbD.innerHTML = "";
         }
     }
 
