@@ -136,6 +136,8 @@ $(window).on('load', function() {
                 v.pause()
                 qd.style.display = "block";
                 //console.log("timed function triggered, display set to block...")
+            } else {
+                q1_shown = false; // reset MCQ if video is placed before MCQ
             }
         }
     }
