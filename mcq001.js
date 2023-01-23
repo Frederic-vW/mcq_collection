@@ -1,21 +1,27 @@
 $(window).on('load', function() {
     //console.log("js script video-MCQ running ...")
-    vb = document.getElementsByClassName('video-js')[0]
-    //console.log(vb)
-    vrect = vb.getBoundingClientRect()
+    videoBox = document.getElementsByClassName('video-js')[0]
+    //console.log(videoBox)
+    vrect = videoBox.getBoundingClientRect()
     //console.log(vrect)
-    vs = document.getElementsByTagName('video')
-    v = vs[0]
-    if (v.getAttribute('title') == 'Troemner_1.mp4') {
-        v.ontimeupdate = function() {showQuestion()};
-        //v.volume = 0.0;
+    //vs = document.getElementsByTagName('video')
+    //v = vs[0]
+    video = document.getElementsByTagName('video')[0]
+    if (video.getAttribute('title') == 'Troemner_1.mp4') {
+        video.ontimeupdate = function() {showQuestion()};
+        //video.volume = 0.0;
         //console.log("video muted, function triggered...")
     }
     // main question div qd
     qd = document.createElement("div")
-    qd.setAttribute("align", "left")
-    qd.className = "modal"
-    qd.id = 'mcq_id'
+    //qd.setAttribute("align", "left")
+    //qd.className = "modal"
+    //qd.id = 'mcq_id'
+    Object.assign(qd, {
+        align: "left",
+        className: "modal",
+        id: "mcq_id",
+    })
     Object.assign(qd.style, {
         display: "none",
         position: "absolute",
@@ -126,18 +132,19 @@ $(window).on('load', function() {
     p3.appendChild(b2)
     qd2.appendChild(p3)
     qd.appendChild(qd2)
-    parentDiv = vb.parentNode // parent of videobox (video-js class element)
-    parentDiv.insertBefore(qd, vb.nextSibling) // insert MCQ div on top of videobox
+    //parentDiv = vb.parentNode // parent of videobox (video-js class element)
+    //parentDiv.insertBefore(qd, vb.nextSibling) // insert MCQ div on top of videobox
+    videoBox.parentNode.insertBefore(qd, videoBox.nextSibling) // insert MCQ div on top of videobox
 
     var q1_shown = false;
     function showQuestion() {
-        if ((!q1_shown) && (v.currentTime > 1.0)) {
+        if ((!q1_shown) && (video.currentTime > 1.0)) {
             q1_shown = true;
-            v.pause()
+            video.pause()
             qd.style.display = "block";
             //console.log("timed function triggered, display set to block...")
         }
-        if (q1_shown && (v.currentTime < 1.0)) {
+        if (q1_shown && (video.currentTime < 1.0)) {
             q1_shown = false;
             // reset checkboxes
             iA.checked = false;
