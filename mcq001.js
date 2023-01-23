@@ -1,22 +1,14 @@
 $(window).on('load', function() {
     //console.log("js script video-MCQ running ...")
-    videoBox = document.getElementsByClassName('video-js')[0]
-    //console.log(videoBox)
-    vrect = videoBox.getBoundingClientRect()
-    //console.log(vrect)
-    //vs = document.getElementsByTagName('video')
-    //v = vs[0]
+    videoPlayer = document.getElementsByClassName('video-js')[0]
+    videoBox = videoPlayer.getBoundingClientRect()
     video = document.getElementsByTagName('video')[0]
     if (video.getAttribute('title') == 'Troemner_1.mp4') {
         video.ontimeupdate = function() {showQuestion()};
         //video.volume = 0.0;
-        //console.log("video muted, function triggered...")
     }
-    // main question div qd
+    // create MCQ div
     qd = document.createElement("div")
-    //qd.setAttribute("align", "left")
-    //qd.className = "modal"
-    //qd.id = 'mcq_id'
     Object.assign(qd, {
         align: "left",
         className: "modal",
@@ -27,12 +19,11 @@ $(window).on('load', function() {
         position: "absolute",
         overflow: "hidden",
         backgroundColor: "rgba(200,200,200,0.7)",
-        left: vrect.x+'px',
-        top: vrect.y+'px',
-        width: vrect.width+'px',
-        height: vrect.height+'px',
+        left: videoBox.x+'px',
+        top: videoBox.y+'px',
+        width: videoBox.width+'px',
+        height: videoBox.height+'px',
     })
-    //console.log(qd.style)
     
     qd2 = document.createElement("div")
     qd2.style.cssText = `position: relative; padding: 20px; margin: auto;
@@ -49,7 +40,6 @@ $(window).on('load', function() {
 
     // answer (A)
     dA = document.createElement("div")
-    //dA.setAttribute("style", "display: inline-block;")
     iA = document.createElement("input")
     Object.assign(iA, {type: "checkbox"})
     lA = document.createElement("label")
@@ -126,15 +116,13 @@ $(window).on('load', function() {
     b2.setAttribute("id", "skip-button")
     b2.onclick = function(){
         qd.style.display = "none";
-        v.play();
+        video.play();
     }
     b2.innerHTML = "Skip"
     p3.appendChild(b2)
     qd2.appendChild(p3)
     qd.appendChild(qd2)
-    //parentDiv = vb.parentNode // parent of videobox (video-js class element)
-    //parentDiv.insertBefore(qd, vb.nextSibling) // insert MCQ div on top of videobox
-    videoBox.parentNode.insertBefore(qd, videoBox.nextSibling) // insert MCQ div on top of videobox
+    videoPlayer.parentNode.insertBefore(qd, videoPlayer.nextSibling) // insert MCQ div on top of videobox
 
     var q1_shown = false;
     function showQuestion() {
@@ -142,7 +130,6 @@ $(window).on('load', function() {
             q1_shown = true;
             video.pause()
             qd.style.display = "block";
-            //console.log("timed function triggered, display set to block...")
         }
         if (q1_shown && (video.currentTime < 1.0)) {
             q1_shown = false;
