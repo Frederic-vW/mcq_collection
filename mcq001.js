@@ -143,6 +143,8 @@ $(window).on('load', function() {
             fbB.innerHTML = "";
             fbC.innerHTML = "";
             fbD.innerHTML = "";
+            // reset skip/continue button
+            b2.innerHTML = "Skip"
         }
     }
 
