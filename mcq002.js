@@ -127,7 +127,7 @@ $(window).on('load', function() {
 
     var q1_shown = false;
     function showQuestion() {
-        if ((!q1_shown) && (video.currentTime > 1.0)) {
+        if ((!q1_shown) && (video.currentTime > 5.1)) {
             q1_shown = true;
             video.pause()
             qd.style.display = "block";
