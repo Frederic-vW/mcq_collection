@@ -35,7 +35,6 @@ $(window).on('load', function() {
         display: "none",
         position: "absolute",
         overflow: "hidden",
-        overflow-y: "scroll",
         backgroundColor: "rgba(200,200,200,0.7)",
         left: videoBox.x+'px',
         top: videoBox.y+'px',
