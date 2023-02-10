@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-    //console.log("js script video-MCQ running ...")
+    console.log("js script video-MCQ running ...")
     times = [152, 559, 913] // times at which a MCQ is shown, 2:32, 9:19, 15:13
     n_mcq = times.length
     ansTexts = [
