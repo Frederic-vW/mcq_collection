@@ -23,12 +23,14 @@ $(window).on('load', function() {
     video = document.getElementsByTagName('video')[0]
     if (video.getAttribute('title') == '00_Muscle_Intro_2023') {
         video.ontimeupdate = function() {showQuestion()};
+        console.log('showQuestion triggered')
     }
 
     t_prev = 0  // record previous time stamp
     q_shown = new Array(n_mcq).fill(false)
     function showQuestion() {
         t_now = video.currentTime
+        console.log('function showQuestion...', t_now)
         if (t_now < times[0]) {
             qId = -1 // current time before 1st question
         } else if (t_now > times[times.length-1]) {
@@ -46,6 +48,7 @@ $(window).on('load', function() {
                 q_shown[i] = true
             }
         }
+        console.log('qId = ', qId)
 
         // is this a forward jump?
         if (t_now > t_prev + 2.0) {
@@ -63,7 +66,7 @@ $(window).on('load', function() {
         // find attachment element
         videoPlayer = document.getElementsByClassName('video-js')[0]
         videoBox = videoPlayer.getBoundingClientRect()
-        //console.log(videoBox)
+        console.log(videoBox)
 
         // decide whether to show MCQ or not (already shown)
         if (qId >= 0) {
