@@ -160,6 +160,8 @@ $(window).on('load', function() {
 
                 // insert MCQ div on top of videobox
                 videoPlayer.parentNode.insertBefore(qd, videoPlayer.nextSibling)
+                qdBox = qd.getBoundingClientRect()
+                console.log(qdBox)
 
                 // pause video and show MCQ
                 video.pause()
