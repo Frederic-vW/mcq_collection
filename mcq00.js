@@ -82,10 +82,12 @@ $(window).on('load', function() {
                 })
                 // videoBox.x+'px'
                 // videoBox.y+'px'
+                // overflow: "hidden",
                 Object.assign(qd.style, {
                     display: "none",
                     position: "absolute",
-                    overflow: "hidden",
+                    overflowX: "hidden",
+                    overflowY: "auto",
                     backgroundColor: "rgba(200,200,200,0.7)",
                     left: 0+'px',
                     top: 0+'px',
