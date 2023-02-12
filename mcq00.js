@@ -80,13 +80,15 @@ $(window).on('load', function() {
                     className: "modal",
                     id: "mcq_id",
                 })
+                // videoBox.x+'px'
+                // videoBox.y+'px'
                 Object.assign(qd.style, {
                     display: "none",
                     position: "absolute",
                     overflow: "hidden",
                     backgroundColor: "rgba(200,200,200,0.7)",
-                    left: videoBox.x+'px',
-                    top: videoBox.y+'px',
+                    left: 0+'px',
+                    top: 0+'px',
                     width: videoBox.width+'px',
                     height: videoBox.height+'px',
                 })
