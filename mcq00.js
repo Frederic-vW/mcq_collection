@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-    console.log("js script video-MCQ running ...")
+    //console.log("js script video-MCQ running ...")
     times = [152, 559, 913] // times at which a MCQ is shown, 2:32, 9:19, 15:13
     n_mcq = times.length
     ansTexts = [
@@ -23,14 +23,14 @@ $(window).on('load', function() {
     video = document.getElementsByTagName('video')[0]
     if (video.getAttribute('title') == '00_Muscle_Intro_2023') {
         video.ontimeupdate = function() {showQuestion()};
-        console.log('showQuestion triggered')
+        //console.log('showQuestion triggered')
     }
 
     t_prev = 0  // record previous time stamp
     q_shown = new Array(n_mcq).fill(false)
     function showQuestion() {
         t_now = video.currentTime
-        console.log('function showQuestion...', t_now)
+        //console.log('function showQuestion...', t_now)
         if (t_now < times[0]) {
             qId = -1 // current time before 1st question
         } else if (t_now > times[times.length-1]) {
@@ -48,7 +48,7 @@ $(window).on('load', function() {
                 q_shown[i] = true
             }
         }
-        console.log('qId = ', qId)
+        //console.log('qId = ', qId)
 
         // is this a forward jump?
         if (t_now > t_prev + 2.0) {
@@ -66,7 +66,7 @@ $(window).on('load', function() {
         // find attachment element
         videoPlayer = document.getElementsByClassName('video-js')[0]
         videoBox = videoPlayer.getBoundingClientRect()
-        console.log(videoBox)
+        //console.log(videoBox)
 
         // decide whether to show MCQ or not (already shown)
         if (qId >= 0) {
@@ -80,9 +80,6 @@ $(window).on('load', function() {
                     className: "modal",
                     id: "mcq_id",
                 })
-                // videoBox.x+'px'
-                // videoBox.y+'px'
-                // overflow: "hidden",
                 Object.assign(qd.style, {
                     display: "none",
                     position: "absolute",
@@ -164,8 +161,8 @@ $(window).on('load', function() {
 
                 // insert MCQ div on top of videobox
                 videoPlayer.parentNode.insertBefore(qd, videoPlayer.nextSibling)
-                qdBox = qd.getBoundingClientRect()
-                console.log(qdBox)
+                //qdBox = qd.getBoundingClientRect()
+                //console.log(qdBox)
 
                 // pause video and show MCQ
                 video.pause()
