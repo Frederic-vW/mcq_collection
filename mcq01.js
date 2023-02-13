@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-    //console.log("js script video-MCQ running ...")
+    console.log("js script video-MCQ running ...")
     times = [152, 559, 913] // 2:32, 9:19, 15:13
     n_mcq = times.length
     ansTexts = [
@@ -23,7 +23,7 @@ $(window).on('load', function() {
     video = document.getElementsByTagName('video')[0]
     if (video.getAttribute('title') == '01_Skeletal_ECcoupling_2023') {
         video.ontimeupdate = function() {showQuestion()};
-        //console.log('showQuestion triggered')
+        console.log('showQuestion triggered')
     }
 
     t_prev = 0  // record previous time stamp
@@ -47,7 +47,7 @@ $(window).on('load', function() {
                 q_shown[i] = true
             }
         }
-        //console.log('qId = ', qId)
+        console.log('qId = ', qId)
 
         // is this a forward jump?
         if (t_now > t_prev + 2.0) {
