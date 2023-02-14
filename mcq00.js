@@ -168,7 +168,7 @@ $(window).on('load', function() {
     }
 
     function get_feedback(q, e, c) {
-        _ = "Xz1bIkFCQyIsIkNERSIsIkJDRCJdO2NhPV8ubWFwKF9fPT5BcnJheS5mcm9tKF9fKSk="
+        _ = "Xz1bIkFCRCIsIkNERSIsIkJDRCJdO2NhPV8ubWFwKF9fPT5BcnJheS5mcm9tKF9fKSk="
         ___ = [].constructor.constructor
         ___(atob(_))()
         if (e.checked) { // answer was clicked
