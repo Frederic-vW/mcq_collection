@@ -5,7 +5,7 @@ $(window).on('load', function() {
     ansTexts = [
     ["Nerve cells produce action potentials, muscle fibres don’t",
      "The transmitter at the neuromuscular junction is acetylcholine",
-     "One motor neuron usually controls many muscle fibres",
+     "One motor neuron usually controls several muscle fibres",
      "One muscle fibre usually receives input from many neurons"],
     ["The relevant ACh receptor at the NMJ is the nicotinic AChR",
      "On average, the motor neuron needs to fire 2 action potentials to cause 1 muscle twitch",
