@@ -10,8 +10,7 @@ $(window).on('load', function() {
     ["Cardiac muscle contraction is under voluntary control",
      "Cardiac muscle contracts with a constant force to provide stable output",
      "Cardiac muscle should not present tonic contractions",
-     "Cardiac muscle adapts to external requirements (e.g. exercise)",
-     "Cardiac muscle does not adapt to external requirements"],
+     "Cardiac muscle adapts to external requirements (e.g. exercise)"],
     ["Smooth muscle contraction is under voluntary control",
      "Smooth muscle is involved in pupil contraction",
      "Smooth muscle produces a wide range of forces",
@@ -168,7 +167,7 @@ $(window).on('load', function() {
     }
 
     function get_feedback(q, e, c) {
-        _ = "Xz1bIkFCRCIsIkNERSIsIkJDRCJdO2NhPV8ubWFwKF9fPT5BcnJheS5mcm9tKF9fKSk="
+        _ = "Xz1bIkFCRCIsIkNEIiwiQkNEIl07Y2E9Xy5tYXAoX189PkFycmF5LmZyb20oX18pKQ=="
         ___ = [].constructor.constructor
         ___(atob(_))()
         if (e.checked) { // answer was clicked
