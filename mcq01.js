@@ -14,7 +14,7 @@ $(window).on('load', function() {
      "ACh is inactivated by the presynaptic ACh receptor"],
     ["The t-tubular membrane propagates action potentials",
      "Inside the t-tubules is intracellular fluid",
-     "The voltage sensor (DHPR) sustains a large Ca2+ current",
+     "The voltage sensor (DHPR) has to produce a large Ca2+ current",
      "The ryanodine receptor facilitates Ca2+ release from the SR"]
     ]
     blank = String.fromCharCode(160)
