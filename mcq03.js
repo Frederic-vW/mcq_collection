@@ -3,7 +3,7 @@ $(window).on('load', function() {
     times = [608, 923, 1291] // 10:08, 15:23, 21:31
     n_mcq = times.length
     ansTexts = [
-    ["Summing of twitches shows an increase in force",
+    ["Summing of twitches leads to an increase in force",
      "Summing of action potentials leads to a larger depolarization",
      "In an unfused tetanus, the fibre relaxes completely between twitches",
      "In a fused tetanus, the fibre does not relax between twitches"],
