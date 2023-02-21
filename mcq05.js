@@ -3,7 +3,7 @@ $(window).on('load', function() {
     times = [424, 746, 941] // 7:04, 12:26, 15:41
     n_mcq = times.length
     ansTexts = [
-    ["Smooth muscle cells can be activated by voltage, peptides, stretch, and other stimuli",
+    ["Smooth muscle can be activated by voltage, peptides, stretch, and other stimuli",
      "Smooth muscle cells don’t need an elevated intracellular Ca2+ for contraction",
      "Single-unit smooth muscle cells are electrically coupled and contract as one",
      "Multi-unit smooth muscle can be synchronized by neural input"],
