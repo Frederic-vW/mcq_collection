@@ -7,7 +7,7 @@ $(window).on('load', function() {
      "The transmitter at the neuromuscular junction is acetylcholine",
      "One motor neuron usually controls several muscle fibres",
      "One muscle fibre usually receives input from many neurons"],
-    ["The relevant ACh receptor at the NMJ is the nicotinic AChR",
+    ["The relevant ACh receptor at the NMJ is a nicotinic AChR",
      "On average, a motor neuron has to fire 2 action potentials to cause one twitch",
      "Presynaptic voltage-gated Ca2+ channels facilitate ACh release",
      "Non-selective cation channels can mediate membrane depolarization",
