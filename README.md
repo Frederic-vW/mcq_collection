@@ -5,7 +5,7 @@ This repo is published as a [GitHub page](https://frederic-vw.github.io/mcq_coll
 js example code: [https://frederic-vw.github.io/mcq_collection/mcq00.js](https://frederic-vw.github.io/mcq_collection/mcq00.js)
 
 <details>
-# get encryption for video MCQ answers
-s = '_=["ABC","CDE","BCD"];ca=_.map(__=>Array.from(__))'
+# get encryption for video MCQ answers  
+s = '_=["ABC","CDE","BCD"];ca=_.map(__=>Array.from(__))'  
 console.log(btoa(s))
 </details>
