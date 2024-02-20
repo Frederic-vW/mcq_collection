@@ -21,7 +21,7 @@ $(window).on('load', function() {
 
     // find Moodle html elements
     video = document.getElementsByTagName('video')[0]
-    if (video.getAttribute('title') == '01_Skeletal_ECcoupling_2024') {
+    if (video.getAttribute('title') == '01_Skeletal_ECcoupling') {
         video.ontimeupdate = function() {showQuestion()};
         console.log('showQuestion triggered')
     }
