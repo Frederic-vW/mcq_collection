@@ -20,7 +20,7 @@ $(window).on('load', function() {
 
     // find Moodle html elements
     video = document.getElementsByTagName('video')[0]
-    if (video.getAttribute('title') == '00_Muscle_Intro_2024') {
+    if (video.getAttribute('title') == '00_Muscle_Intro') {
         video.ontimeupdate = function() {showQuestion()};
         //console.log('showQuestion triggered')
     }
