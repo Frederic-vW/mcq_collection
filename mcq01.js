@@ -1,6 +1,7 @@
 $(window).on('load', function() {
     console.log("js script video-MCQ running ...")
-    times = [152, 559, 913] // 2:32, 9:19, 15:13
+    // times = [152, 559, 913] // 2:32, 9:19, 15:13 (2023)
+    times = [147, 554, 908] // 2:27, 9:14, 15:08 (2024)
     n_mcq = times.length
     ansTexts = [
     ["Nerve cells produce action potentials, muscle fibres don’t",
