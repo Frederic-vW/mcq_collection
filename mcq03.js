@@ -1,6 +1,7 @@
 $(window).on('load', function() {
     //console.log("js script video-MCQ running ...")
-    times = [608, 923, 1291] // 10:08, 15:23, 21:31
+    //times = [608, 923, 1291] // 10:08, 15:23, 21:31 (2023)
+    times = [602, 917, 1285] // 10:02, 15:17, 21:25 (2024)
     n_mcq = times.length
     ansTexts = [
     ["Summing of twitches leads to an increase in force",
