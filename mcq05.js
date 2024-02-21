@@ -1,6 +1,7 @@
 $(window).on('load', function() {
     //console.log("js script video-MCQ running ...")
-    times = [424, 746, 941] // 7:04, 12:26, 15:41
+    //times = [424, 746, 941] // 7:04, 12:26, 15:41 (2023)
+    times = [418, 740, 935] // 6:58, 12:20, 15:35 (2024)
     n_mcq = times.length
     ansTexts = [
     ["Smooth muscle can be activated by voltage, peptides, stretch, and other stimuli",
