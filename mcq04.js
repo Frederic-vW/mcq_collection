@@ -1,6 +1,7 @@
 $(window).on('load', function() {
     //console.log("js script video-MCQ running ...")
-    times = [380, 636, 1117] // 6:20, 10:36, 18:37
+    //times = [380, 636, 1117] // 6:20, 10:36, 18:37 (2023)
+    times = [375, 631, 1112] // 6:15, 10:31, 18:32 (2024)
     n_mcq = times.length
     ansTexts = [
     ["Pacemaker cells are specialized nerve cells",
