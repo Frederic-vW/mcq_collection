@@ -1,6 +1,7 @@
 $(window).on('load', function() {
     //console.log("js script video-MCQ running ...")
-    times = [336, 562, 760, 1203] // 5:36, 9:22, 12:40, 20:03
+    //times = [336, 562, 760, 1203] // 5:36, 9:22, 12:40, 20:03 (2023)
+    times = [330, 556, 754, 1197] // 5:30, 9:16, 12:34, 19:57 (2024)
     n_mcq = times.length
     ansTexts = [
     ["The Z-disk is made mainly from myosin",
