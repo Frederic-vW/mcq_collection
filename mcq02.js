@@ -7,7 +7,7 @@ $(window).on('load', function() {
     ["The Z-disk is made mainly from myosin",
      "The thin filaments are attached to the Z-disk",
      "The average sarcomere length is 2-2.5 mm",
-     "Titin is connects the M-line and the Z-line"],
+     "Titin connects the M-line and the Z-line"],
     ["The thin filaments contain actin, tropomyosin, and troponin",
      "Tropomyosin is the calcium sensor",
      "Troponin consists of TnA, TnB, and TnC",
@@ -190,4 +190,5 @@ $(window).on('load', function() {
         }
     }
 });
+
 
