@@ -86,5 +86,6 @@ $(window).on("load", function () {
 
   function openQuestion(qId) {
     // build modal here
+    console.log("Open question: ", qId):
   }
 });
