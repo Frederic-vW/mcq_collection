@@ -45,27 +45,80 @@ $(window).on("load", function () {
   wrapper.style.position = "relative";
   
   let previousTime = 0;
-  let questionOpen = false;
+  //let questionOpen = false;
   const shown = new Array(times.length).fill(false);
 
   video.addEventListener("timeupdate", showQuestion);
 
-  function getQuestionIndex(currentTime) {
+  function getQuestionIndex(t_now) {
+    if (t_now < times[0]) {
+      qId = -1; // current time before 1st question
+    } else if (t_now > times[times.length-1]) {
+      qId = times.length-1; // current time after last question
+    }
+    else {
+      qId = 0;
+      while (times[qId] < t_now) { qId++; }
+      qId--; // decrement 1 to get the right MCQ
+    }
+    
+    // whereever you land, set the previous Qs to 'shown'
+    if (qId > 0) {
+      for (i=0; i<qId; i++) { shown[i] = true; }
+    }
+    console.log('qId = ', qId)
+    
+    // is this a forward jump? -> don't show the MCQ of the section you jumped into
+    if (t_now > previousTime + 2) { shown[qId] = true; }
+    
+    // is this a backward jump?
+    if (t_now < previousTime) {
+      shown[qId] = true; // don't show the MCQ of the section you jumped into
+      for (i=qId+1; i<times.length; i++) {
+        shown[i] = false; // reset all subsequent MCQs to "not shown"
+      }
+    }
+    /*
+    if (qId >= 0) {
+      for (let i = 0; i < qId; i++) shown[i] = true;
+    }
+
+    if (qId >= 0 && currentTime > previousTime + 2) {
+      shown[qId] = true;
+    }
+
+    if (qId >= 0 && currentTime < previousTime) {
+      shown[qId] = true;
+      for (let i = qId + 1; i < times.length; i++) shown[i] = false;
+    }
+    */
+    
+    return qId;
+    
+    /*
     for (let i = times.length - 1; i >= 0; i--) {
       if (currentTime >= times[i]) {
-        return i;
         console.log("getQuestionIndex: ", i);
+        return i;
       }
     }
     console.log("getQuestionIndex: ", -1);
     return -1;
+    */
   }
 
   function showQuestion() {
-    if (questionOpen) return;
+    //if (questionOpen) return;
     const tNow = video.currentTime;
+    qId = getQuestionIndex(tNow);
+    if (qId >= 0) {
+      if (q_shown[qId] == false) {
+        q_shown[qId] = true;
+        openQuestion(qId);
+      }
+    }
     //const currentTime = video.currentTime;
-    // If user moved backwards, re-enable all later questions
+    /* If user moved backwards, re-enable all later questions
     if (tNow < previousTime) {
       for (let i = 0; i < times.length; i++) {
         if (times[i] > tNow) {
@@ -73,8 +126,9 @@ $(window).on("load", function () {
         }
       }
     }
+    */
 
-    // Show the first unseen question whose timestamp has been reached
+    /* Show the first unseen question whose timestamp has been reached
     for (let i = 0; i < times.length; i++) {
       if (!shown[i] && tNow >= times[i]) {
         shown[i] = true;
@@ -83,6 +137,7 @@ $(window).on("load", function () {
         break;
       }
     }
+    */
     
     previousTime = tNow;
 
