@@ -45,7 +45,6 @@ $(window).on("load", function () {
   wrapper.style.position = "relative";
   
   let previousTime = 0;
-  //let questionOpen = false;
   const shown = new Array(times.length).fill(false);
 
   video.addEventListener("timeupdate", showQuestion);
@@ -77,38 +76,11 @@ $(window).on("load", function () {
       for (i=qId+1; i<times.length; i++) {
         shown[i] = false; // reset all subsequent MCQs to "not shown"
       }
-    }
-    /*
-    if (qId >= 0) {
-      for (let i = 0; i < qId; i++) shown[i] = true;
-    }
-
-    if (qId >= 0 && currentTime > previousTime + 2) {
-      shown[qId] = true;
-    }
-
-    if (qId >= 0 && currentTime < previousTime) {
-      shown[qId] = true;
-      for (let i = qId + 1; i < times.length; i++) shown[i] = false;
-    }
-    */
-    
+    }    
     return qId;
-    
-    /*
-    for (let i = times.length - 1; i >= 0; i--) {
-      if (currentTime >= times[i]) {
-        console.log("getQuestionIndex: ", i);
-        return i;
-      }
-    }
-    console.log("getQuestionIndex: ", -1);
-    return -1;
-    */
   }
 
   function showQuestion() {
-    //if (questionOpen) return;
     const tNow = video.currentTime;
     qId = getQuestionIndex(tNow);
     if (qId >= 0) {
@@ -116,54 +88,8 @@ $(window).on("load", function () {
         shown[qId] = true;
         openQuestion(qId);
       }
-    }
-    //const currentTime = video.currentTime;
-    /* If user moved backwards, re-enable all later questions
-    if (tNow < previousTime) {
-      for (let i = 0; i < times.length; i++) {
-        if (times[i] > tNow) {
-          shown[i] = false;
-        }
-      }
-    }
-    */
-
-    /* Show the first unseen question whose timestamp has been reached
-    for (let i = 0; i < times.length; i++) {
-      if (!shown[i] && tNow >= times[i]) {
-        shown[i] = true;
-        questionOpen = true;
-        openQuestion(i);
-        break;
-      }
-    }
-    */
-    
+    }    
     previousTime = tNow;
-
-    //const qId = getQuestionIndex(currentTime);
-    /*
-    if (qId >= 0) {
-      for (let i = 0; i < qId; i++) shown[i] = true;
-    }
-
-    if (qId >= 0 && currentTime > previousTime + 2) {
-      shown[qId] = true;
-    }
-
-    if (qId >= 0 && currentTime < previousTime) {
-      shown[qId] = true;
-      for (let i = qId + 1; i < times.length; i++) shown[i] = false;
-    }
-
-    if (qId >= 0 && !shown[qId]) {
-      shown[qId] = true;
-      openQuestion(qId);
-    }
-    
-    previousTime = currentTime;
-    */
-
   }
 
   function getFeedback(qId, checked, letter) {
