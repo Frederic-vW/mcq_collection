@@ -112,8 +112,8 @@ $(window).on("load", function () {
     const tNow = video.currentTime;
     qId = getQuestionIndex(tNow);
     if (qId >= 0) {
-      if (q_shown[qId] == false) {
-        q_shown[qId] = true;
+      if (shown[qId] == false) {
+        shown[qId] = true;
         openQuestion(qId);
       }
     }
