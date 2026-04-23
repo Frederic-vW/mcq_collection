@@ -39,6 +39,12 @@ $(window).on("load", function () {
   }
 
   console.log("all checks passed, starting MQC logic..."); 
+  
+  const videoPlayer = document.getElementsByClassName("video-js")[0];
+  // Ensure parent is positioned
+  const wrapper = videoPlayer.parentNode;
+  wrapper.style.position = "relative";
+  
   let previousTime = 0;
   const shown = new Array(times.length).fill(false);
 
@@ -94,10 +100,10 @@ $(window).on("load", function () {
     mcqDiv.className = "mcq-modal";
     Object.assign(mcqDiv.style, {
       position: "absolute",
-      left: "0px",
-      top: "0px",
-      width: videoBox.width + "px",
-      height: videoBox.height + "px",
+      left: "0",
+      top: "0",
+      width: "100%",
+      height: "100%",
       backgroundColor: "rgba(200,200,200,0.7)",
       overflowY: "auto",
       zIndex: 9999
@@ -190,7 +196,8 @@ $(window).on("load", function () {
     mcqDiv.appendChild(container);
 
     // Insert into DOM
-    videoPlayer.parentNode.insertBefore(mcqDiv, videoPlayer.nextSibling);
+    //videoPlayer.parentNode.insertBefore(mcqDiv, videoPlayer.nextSibling);
+    wrapper.appendChild(mcqDiv);
 
     // Pause video
     video.pause();
