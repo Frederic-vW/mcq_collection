@@ -33,7 +33,7 @@ $(window).on("load", function () {
     console.log("no video found, returning..."); 
     return;
   }
-  if (video.getAttribute("title") !== "L5_Action_Potential_FvW_2025") {
+  if (video.getAttribute("title") !== "L5_Action_Potential_FvW_2025.mp4") {
     console.log("video title not found, returning..."); 
     return;
   }
