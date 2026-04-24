@@ -1,6 +1,7 @@
 $(window).on("load", function () {
   let verbose = false;
   if (verbose) console.log("MCQ js activated");
+  const videoTitle = "PPA.mp4";
   const times = [30, 60, 90];
   const answerTexts = [
     [
@@ -35,7 +36,7 @@ $(window).on("load", function () {
     console.log("no video found, returning..."); 
     return;
   }
-  if (video.getAttribute("title") !== "PPA.mp4") {
+  if (video.getAttribute("title") !== videoTitle) {
     console.log("video title not found, returning..."); 
     return;
   }
