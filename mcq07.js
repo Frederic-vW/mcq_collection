@@ -92,7 +92,7 @@ $(window).on("load", function () {
   }
 
   function openQuestion(qId) {
-    console.log("Open question: ", qId);
+    if (verbose) console.log("Open question: ", qId);
     const videoPlayer = document.getElementsByClassName("video-js")[0];
     const videoBox = videoPlayer.getBoundingClientRect();
 
