@@ -2,7 +2,7 @@ $(window).on("load", function () {
   let verbose = false;
   if (verbose) console.log("MCQ js activated");
 
-  const videoTitle = "PPA.mp4";
+  const videoTitle = "test.mp4";
   const times = [45,77,93];
   const answerTexts = [
   [
