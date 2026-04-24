@@ -2,40 +2,41 @@ $(window).on("load", function () {
   let verbose = false;
   if (verbose) console.log("MCQ js activated");
 
-  const videoTitle = "test.mp4";
-  const times = [30,75,100];
+  const videoTitle = "PPA.mp4";
+  const times = [45,77,93];
   const answerTexts = [
   [
-    "is it true?",
-    "what is this?",
-    "why?",
-    "how?"
+    "option-1A",
+    "option-1B",
+    "option-1C",
+    "option-1D",
+    "option-1E",
+    "option-1F"
   ],
   [
-    "option-1",
-    "option-2",
-    "option-3",
-    "option-4"
+    "AAAA",
+    "BBBB",
+    "CCCC"
   ],
   [
-    "option-aaaaa)",
-    "option-bbbbb)",
-    "option-ccccc)",
-    "option-dddd)"
+    "option-a)",
+    "option-b)",
+    "option-c)",
+    "option-d)"
   ]
 ];
   const correctAnswers = [
   [
-    "A",
-    "B"
+    "D",
+    "E",
+    "F"
   ],
   [
-    "A",
+    "C"
+  ],
+  [
     "B",
     "C",
-    "D"
-  ],
-  [
     "D"
   ]
 ];
