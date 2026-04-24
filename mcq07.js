@@ -1,5 +1,6 @@
 $(window).on("load", function () {
-  console.log("MCQ js activated");
+  let verbose = false;
+  if (verbose) console.log("MCQ js activated");
   const times = [30, 60, 90];
   const answerTexts = [
     [
@@ -38,7 +39,7 @@ $(window).on("load", function () {
     console.log("video title not found, returning..."); 
     return;
   }
-  console.log("all checks passed, starting MQC logic..."); 
+  if (verbose) console.log("all checks passed, starting MQC logic..."); 
   // attach MCQ trigger
   video.addEventListener("timeupdate", triggerQuestion);
 
@@ -52,7 +53,6 @@ $(window).on("load", function () {
   let t1 = 0;
   let q0 = 0; // question index at t0
   let q1 = 0; // question index at t1
-  //const shown = new Array(times.length).fill(false);
   
   function getQuestionIndex(t) {
     /*
@@ -64,21 +64,17 @@ $(window).on("load", function () {
     */
     for (i=0; i<times.length; i++) {
       if (t <= times[i]) {
-        console.log(i);
         return i;
       }
     }
-    console.log(i);
     return i;
   }
 
   function triggerQuestion() {
-    //const tNow = video.currentTime;
     t1 = video.currentTime;
     q1 = getQuestionIndex(t1);
     console.log("q1: ", q1);
     let jump = t1 - t0 > 2;
-    //if (jump === false && q1 != q0) {
     if (jump === false && q1 === q0+1) {
       openQuestion(q0);
     }
@@ -201,7 +197,6 @@ $(window).on("load", function () {
     mcqDiv.appendChild(container);
 
     // Insert into DOM
-    //videoPlayer.parentNode.insertBefore(mcqDiv, videoPlayer.nextSibling);
     wrapper.appendChild(mcqDiv);
 
     // Pause video
