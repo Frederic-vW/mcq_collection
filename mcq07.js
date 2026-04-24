@@ -73,11 +73,8 @@ $(window).on("load", function () {
     t1 = video.currentTime;
     q1 = getQuestionIndex(t1);
     let jump = t1 - t0 > 2;
-    if !jump {
-      if (q1 = q0+1) {
-        // we are crossing the boundary between q0 and q1
-        openQuestion(q0);
-      }
+    if (jump === false && q1 = q0+1) {
+      openQuestion(q0);
     }
     // update tracker
     t0 = t1;
