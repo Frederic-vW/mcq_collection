@@ -73,7 +73,7 @@ $(window).on("load", function () {
     t1 = video.currentTime;
     q1 = getQuestionIndex(t1);
     let jump = t1 - t0 > 2;
-    if (jump === false && q1 = q0+1) {
+    if (jump === false && q1 === q0+1) {
       openQuestion(q0);
     }
     // update tracker
