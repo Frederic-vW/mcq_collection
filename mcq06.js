@@ -1,6 +1,6 @@
 $(window).on("load", function () {
   console.log("MCQ js activated");
-  const times = [60, 120, 180];
+  const times = [30, 60, 90];
   const answerTexts = [
     [
       "option-A",
@@ -33,7 +33,7 @@ $(window).on("load", function () {
     console.log("no video found, returning..."); 
     return;
   }
-  if (video.getAttribute("title") !== "L5_Action_Potential_FvW_2025.mp4") {
+  if (video.getAttribute("title") !== "PPA.mp4") {
     console.log("video title not found, returning..."); 
     return;
   }
