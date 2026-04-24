@@ -68,8 +68,8 @@ $(window).on("load", function () {
         return i;
       }
     }
-    console.log(i+1);
-    return i+1;
+    console.log(i);
+    return i;
   }
 
   function triggerQuestion() {
@@ -78,8 +78,8 @@ $(window).on("load", function () {
     q1 = getQuestionIndex(t1);
     console.log("q1: ", q1);
     let jump = t1 - t0 > 2;
-    //if (jump === false && q1 === q0+1) {
     if (jump === false && q1 != q0) {
+    if (jump === false && q1 === q0+1) {
       openQuestion(q0);
     }
     // update tracker
