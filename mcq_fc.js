@@ -167,6 +167,16 @@ $(window).on("load", function () {
     container.appendChild(frontFace);
     container.appendChild(backFace);
     cardWrapper.appendChild(container);
+    
+    // Title
+    const h1 = document.createElement("h1");
+    h1.textContent = "Quick check";
+    frontFace.appendChild(h1);
+
+    // Instruction
+    const p1 = document.createElement("p");
+    p1.textContent = "Select the correct statements!";
+    frontFace.appendChild(p1);
 
     /* Inner container
     const container = document.createElement("div");
@@ -175,17 +185,7 @@ $(window).on("load", function () {
       margin: "auto",
       width: "100%",
       backgroundColor: "rgba(250,250,250,0.95)"
-    });
-
-    // Title
-    const h1 = document.createElement("h1");
-    h1.textContent = "Quick check";
-    container.appendChild(h1);
-
-    // Instruction
-    const p1 = document.createElement("p");
-    p1.textContent = "Select the correct statements!";
-    container.appendChild(p1);
+    });   
 
     // Answers
     const answersWrapper = document.createElement("div");
@@ -253,7 +253,7 @@ $(window).on("load", function () {
 
     container.appendChild(buttonRow);
     */
-   
+
     mcqDiv.appendChild(container);
 
     // Insert into DOM
