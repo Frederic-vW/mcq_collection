@@ -190,6 +190,41 @@ $(window).on("load", function () {
     p2.textContent = "X is the direct cause of U, and U causes Y.";
     backFace.appendChild(p2);
 
+     // Buttons container
+    const buttonRow = document.createElement("div");
+    buttonRow.style.marginTop = "15px";
+
+    // Submit button
+    //const submitBtn = document.createElement("button");
+    //submitBtn.textContent = "Submit";
+
+    // Continue button
+    const continueBtn = document.createElement("button");
+    continueBtn.textContent = "Continue video...";
+    continueBtn.style.marginLeft = "10px";
+
+    /*
+    submitBtn.addEventListener("click", () => {
+      inputs.forEach((input, i) => {
+        const letter = String.fromCharCode(65 + i);
+        feedbacks[i].innerHTML = getFeedback(qId, input.checked, letter);
+      });
+      continueBtn.textContent = "Continue";
+    });
+    */
+
+    continueBtn.addEventListener("click", () => {
+      mcqDiv.remove();   // clean removal
+      video.play();
+    });
+
+    //buttonRow.appendChild(submitBtn);
+    buttonRow.appendChild(continueBtn);
+
+    container.appendChild(buttonRow);
+    mcqDiv.appendChild(container);
+
+    // add everything to main div
     mcqDiv.appendChild(container);
 
     // Insert into DOM
