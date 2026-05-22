@@ -116,7 +116,7 @@ $(window).on("load", function () {
       height: "100%",
       backgroundColor: "rgba(200,200,200,0.7)",
       overflowY: "auto",
-      zIndex: 9999.
+      zIndex: 9999,
       display: "flex",
       flexDirection: "column",
       alignItems: "stretch"
