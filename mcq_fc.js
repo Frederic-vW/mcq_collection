@@ -168,91 +168,27 @@ $(window).on("load", function () {
     container.appendChild(backFace);
     cardWrapper.appendChild(container);
     
-    // Title
+    // Card content
+
+    // FRONT: title
     const h1 = document.createElement("h1");
     h1.textContent = "Quick check";
     frontFace.appendChild(h1);
 
-    // Instruction
+    // FRONT: text
     const p1 = document.createElement("p");
-    p1.textContent = "Select the correct statements!";
+    p1.textContent = "Explain how X causes Y";
     frontFace.appendChild(p1);
 
-    /* Inner container
-    const container = document.createElement("div");
-    Object.assign(container.style, {
-      padding: "20px",
-      margin: "auto",
-      width: "100%",
-      backgroundColor: "rgba(250,250,250,0.95)"
-    });   
+    // BACK: title
+    const h2 = document.createElement("h1");
+    h2.textContent = "Suggested answer";
+    backFace.appendChild(h2);
 
-    // Answers
-    const answersWrapper = document.createElement("div");
-
-    const inputs = [];
-    const feedbacks = [];
-
-    answerTexts[qId].forEach((text, i) => {
-      const letter = String.fromCharCode(65 + i); // A, B, C...
-
-      const row = document.createElement("div");
-
-      const input = document.createElement("input");
-      input.type = "checkbox";
-      input.id = `q${qId}_${letter}`;
-
-      const label = document.createElement("label");
-      label.htmlFor = input.id;
-      label.textContent = " " + text;
-
-      const feedback = document.createElement("div");
-      feedback.style.color = "blue";
-      feedback.style.fontStyle = "italic";
-
-      row.appendChild(input);
-      row.appendChild(label);
-      row.appendChild(feedback);
-
-      answersWrapper.appendChild(row);
-
-      inputs.push(input);
-      feedbacks.push(feedback);
-    });
-
-    container.appendChild(answersWrapper);
-
-    // Buttons container
-    const buttonRow = document.createElement("div");
-    buttonRow.style.marginTop = "15px";
-
-    // Submit button
-    const submitBtn = document.createElement("button");
-    submitBtn.textContent = "Submit";
-
-    // Continue button
-    const continueBtn = document.createElement("button");
-    continueBtn.textContent = "Skip";
-    continueBtn.style.marginLeft = "10px";
-
-    submitBtn.addEventListener("click", () => {
-      inputs.forEach((input, i) => {
-        const letter = String.fromCharCode(65 + i);
-        feedbacks[i].innerHTML = getFeedback(qId, input.checked, letter);
-      });
-      continueBtn.textContent = "Continue";
-    });
-
-    continueBtn.addEventListener("click", () => {
-      mcqDiv.remove();   // clean removal
-      video.play();
-    });
-
-    buttonRow.appendChild(submitBtn);
-    buttonRow.appendChild(continueBtn);
-
-    container.appendChild(buttonRow);
-    */
+    // BACK: text
+    const p2 = document.createElement("p");
+    p2.textContent = "X is the direct cause of U, and U causes Y.";
+    backFace.appendChild(p2);
 
     mcqDiv.appendChild(container);
 
