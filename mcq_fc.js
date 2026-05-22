@@ -221,11 +221,9 @@ $(window).on("load", function () {
     //buttonRow.appendChild(submitBtn);
     buttonRow.appendChild(continueBtn);
 
-    container.appendChild(buttonRow);
-    mcqDiv.appendChild(container);
-
     // add everything to main div
     mcqDiv.appendChild(container);
+    mcqDiv.appendChild(buttonRow);
 
     // Insert into DOM
     //videoPlayer.parentNode.insertBefore(mcqDiv, videoPlayer.nextSibling);
