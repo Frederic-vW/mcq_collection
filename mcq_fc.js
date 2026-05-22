@@ -116,7 +116,10 @@ $(window).on("load", function () {
       height: "100%",
       backgroundColor: "rgba(200,200,200,0.7)",
       overflowY: "auto",
-      zIndex: 9999
+      zIndex: 9999.
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "stretch"
     });
 
     // Inner container (FLASHCARD ENABLED)
@@ -222,7 +225,8 @@ $(window).on("load", function () {
     buttonRow.appendChild(continueBtn);
 
     // add everything to main div
-    mcqDiv.appendChild(container);
+    //mcqDiv.appendChild(container);
+    mcqDiv.appendChild(cardWrapper);
     mcqDiv.appendChild(buttonRow);
 
     // Insert into DOM
