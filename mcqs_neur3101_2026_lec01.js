@@ -3,10 +3,14 @@ $(window).on("load", function () {
   if (verbose) console.log("MCQ js activated");
 
   const videoTitle = "L01_CNE";
-  const times = [576,1557];
+  const times = [576,1557,1840,2967,3330,3555];
   const stems = [
   "Parkinsonism is defined as a complex that includes (among others): fatigue, tremor, and postural instability. Select the correct mapping of these characteristics to symptom, sign, and syndrome.",
-  "Which of the following are considered higher mental functions?"
+  "Which of the following are considered higher mental functions?",
+  "Select the correct statements about the cranial nerve exam.",
+  "Select the correct statements about neurological examination of the motor system.",
+  "What do we understand by stereognosis?",
+  "Which statements about coordination are correct?"
 ];
   const answerTexts = [
   [
@@ -22,6 +26,34 @@ $(window).on("load", function () {
     "Knee-jerk reflex",
     "Speech comprehension",
     "Attention to external stimuli"
+  ],
+  [
+    "Cranial nerves mainly represent the function of the cerebral cortex.",
+    "Each cranial nerve innervates a defined set of muscles.",
+    "All special senses except olfaction are conveyed by cranial nerves.",
+    "CN VII controls facial muscles.",
+    "The cranial nerve exam yields critical information about brainstem function."
+  ],
+  [
+    "Atrophy is a sign of lower motor dysfunction.",
+    "Muscle mass asymmetry left vs right is considered pathological.",
+    "Increased muscle tone is indicated by the synonyms spasticity and rigidity.",
+    "The basic rule for reflexes is: the stronger, the better.",
+    "A clonus response indicates a lesion of upper motor neurons."
+  ],
+  [
+    "Warm - cold discrimination",
+    "Spatial localization of sounds (stereo hearing)",
+    "Two-point discrimination better than 5 mm",
+    "Tactile recognition of 3D objects",
+    "Recognition of numbers written on the skin"
+  ],
+  [
+    "Intact coordination means there is no lack of force.",
+    "Functionally, we localize coordination in the cerebellum.",
+    "The finger-nose and heel-shin tests reflect coordination.",
+    "Reduced tendon jerk reflexes are documented under coordination.",
+    "Coordination is considered a higher mental function."
   ]
 ];
   const correctAnswers = [
@@ -32,6 +64,22 @@ $(window).on("load", function () {
     "B",
     "D",
     "E"
+  ],
+  [
+    "D",
+    "E"
+  ],
+  [
+    "A",
+    "B",
+    "E"
+  ],
+  [
+    "D"
+  ],
+  [
+    "B",
+    "C"
   ]
 ];
 
