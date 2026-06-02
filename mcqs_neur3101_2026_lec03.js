@@ -8,7 +8,7 @@ $(window).on("load", function () {
   "Select the correct statements about action potentials (AP) and postsynaptic potentials (PSP).",
   "Quick recap - what do you remember about volume conduction?",
   "Recap - what do you remember about EEG oscillations?",
-  "Let's review EEG and pathologies. Select the correct statements:"
+  "Let's review EEG and pathologies."
 ];
   const answerTexts = [
   [
@@ -144,7 +144,7 @@ $(window).on("load", function () {
     }
 
     const p1 = document.createElement("p");
-    p1.textContent = "Select the correct statements!";
+    p1.textContent = "Select the correct statements.";
     container.appendChild(p1);
 
     const answersWrapper = document.createElement("div");
